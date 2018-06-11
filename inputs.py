@@ -47,7 +47,7 @@ def get_truth_ds_filename_pairs(directory, dataset='train'):
     """
     result = []
     with open(os.path.join(directory,
-              '{}_files.csv'.format(dataset)), 'rb') as csvfile:
+              '{}_files.csv'.format(dataset)), 'r') as csvfile:
         spamreader = csv.reader(csvfile)
         for row in spamreader:
             result.append(row)
@@ -67,7 +67,7 @@ def get_selected_truth_ds_filename_pairs(directory, selected_files_list,
     """
     result = []
     with open(os.path.join(directory,
-              '{}_files.csv'.format(dataset)), 'rb') as csvfile:
+              '{}_files.csv'.format(dataset)), 'r') as csvfile:
         spamreader = csv.reader(csvfile)
         for row in spamreader:
             for file_tag in selected_files_list:
